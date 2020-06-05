@@ -10,5 +10,8 @@ namespace Akkatecture_Tutorial.Domain.Model.Account.ValueObjects
             if (value < 0)
                 throw new ArgumentException(nameof(value));
         }
+
+        public static Money operator -(Money a, Money b) => new Money(a.Value - b.Value);
+        public static Money operator +(Money a, Money b) => new Money(a.Value + b.Value);
     }
 }
